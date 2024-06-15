@@ -1,0 +1,40 @@
+{
+Sistema Operacional: Windows
+Arquitetura: 64
+hostname: BOOK-NF90MJICGK
+Data: 12/06/2024 00:06:42.487
+Mensagem: Validação de email realizada com sucesso
+logLevel: INFO
+statusCode: 200
+}
+
+{
+Sistema Operacional: Windows
+Arquitetura: 64
+hostname: BOOK-NF90MJICGK
+Data: 12/06/2024 00:06:45.080
+Mensagem: Validação de senha realizada com sucesso
+logLevel: INFO
+statusCode: 200
+}
+
+{
+Sistema Operacional: Windows
+Arquitetura: 64
+hostname: BOOK-NF90MJICGK
+Data: 12/06/2024 00:09:18.047
+Mensagem: Validação de email realizada com sucesso
+logLevel: INFO
+statusCode: 200
+}
+
+{
+Sistema Operacional: Windows
+Arquitetura: 64
+hostname: BOOK-NF90MJICGK
+Data: 12/06/2024 00:09:20.290
+Mensagem: Validação de senha realizada com sucesso
+logLevel: INFO
+statusCode: 200
+}
+

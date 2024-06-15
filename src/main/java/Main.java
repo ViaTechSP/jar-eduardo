@@ -31,6 +31,7 @@ public class Main {
         SlackModel slackModel = new SlackModel();
         EstacaoModel estacaoModel = new EstacaoModel();
         MainModel mainModel = new MainModel();
+        LinhaModel linhaModel =  new LinhaModel();
 
         Scanner input = new Scanner(System.in);
         LoginMetodos usar = new LoginMetodos();
@@ -133,6 +134,7 @@ public class Main {
 
                     Timer timer = new Timer();
 
+                    Maquina finalMaquinaMySql = maquinaMySql;
                     TimerTask tarefa = new TimerTask() {
                         Integer contagem = 0;
 
@@ -157,8 +159,13 @@ public class Main {
 
                             Integer idUltimoRegistroMySql = registroModel.inserirRegistroMySql(registro, finalEspecificacaoMaquinaMySql.getIdEspecificacaoMaquina());
                             Integer idUltimoRegistroSqlServer = registroModel.inserirDadosRegistroSqlServer(registro, finalEspecificacaoMaquinaSqlServer.getIdEspecificacaoMaquina());
+                            String nomeEstacao = estacaoModel.exibirEstacaoPorMaquina(finalMaquinaMySql.getDominio());
+                            String nomeLinha = linhaModel.exibirLinhaPorMaquina(finalMaquinaMySql.getDominio());
+                            Mensagem mensagem = new Mensagem(nomeEstacao, nomeLinha, finalMaquinaMySql.getDominio());
 
-                            slackModel.verificarRegistro(registro, idUltimoRegistroMySql, idUltimoRegistroSqlServer, especificacaoMaquinaMySql);
+
+                            slackModel.verificarRegistro(registro, idUltimoRegistroMySql,
+                                    idUltimoRegistroSqlServer, especificacaoMaquinaMySql, mensagem);
                         }
                     };
                     timer.scheduleAtFixedRate(tarefa, 200, 5000L);
